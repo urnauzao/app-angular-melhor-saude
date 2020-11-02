@@ -1,15 +1,21 @@
+// import { summaryFileName } from '@angular/compiler/src/aot/util';
 import { Component, OnInit } from '@angular/core';
+import { Medico } from '../../models/Medico';
+import { MedicoService } from '../providers/medico.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-list-medicos',
+  selector: 'app-list',
   templateUrl: './list-medicos.component.html',
   styleUrls: ['./list-medicos.component.scss']
 })
 export class ListMedicosComponent implements OnInit {
 
-  constructor() { }
+  medicos: Observable<Medico[]>;
+  constructor(private medicoService : MedicoService) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.medicos = this.medicoService.getAll();
   }
 
 }

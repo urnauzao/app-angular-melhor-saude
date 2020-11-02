@@ -1,26 +1,16 @@
 <!-- <p>list-medicos works!</p> -->
 
-<div class="film-list">
-    <div class="film-card">
-        <div class="film-card__rating">7.9</div>
-        <img class="film-card__photo" src="https://images-na.ssl-images-amazon.com/images/I/81%2BNup8-8NL._AC_SL1500_.jpg" />
-        <div class="film-card__title">Avangers Endgame</div>
-        <div class="film-card__subtitle">Joe Russo, Anthony Russo</div>
-    </div>
-    <div class="film-card">
-        <div class="film-card__rating">7.9</div>
-        <img class="film-card__photo" src="https://images-na.ssl-images-amazon.com/images/I/81%2BNup8-8NL._AC_SL1500_.jpg" />
-        <div class="film-card__title">Avangers Endgame</div>
-        <div class="film-card__subtitle">Joe Russo, Anthony Russo</div>
-    </div>
-    <div class="film-card">
-        <div class="film-card__rating">7.9</div>
-        <img class="film-card__photo" src="https://images-na.ssl-images-amazon.com/images/I/81%2BNup8-8NL._AC_SL1500_.jpg" />
-        <div class="film-card__title">Avangers Endgame</div>
-        <div class="film-card__subtitle">Joe Russo, Anthony Russo</div>
+<div class="medico-list">
+    <div 
+        *ngFor="let medico of medicos | async"
+        class="medico-card">
+        <div class="medico-card__rating">{{medico.preco_consulta}}</div>
+        <img class="medico-card__photo" [src]="medico.foto" [alt]="medico.nome" />
+        <div class="medico-card__title">{{medico.nome}}</div>
+        <div class="medico-card__subtitle">{{medico.especializacao}}</div>
     </div>
 </div>
-<div class="container">
+<!-- <div class="container">
     <div class="list">
         <div class="list-item">
             <figure class="list-figure">
@@ -31,4 +21,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
