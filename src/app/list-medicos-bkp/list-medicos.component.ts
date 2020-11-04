@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 export class ListMedicosComponent implements OnInit {
 
   medicos: Observable<Medico[]>;
-  displayedColumns: string[] = [ 'nome', 'especializacao', 'acao'];
   constructor(private medicoService : MedicoService) {}
 
   ngOnInit(){

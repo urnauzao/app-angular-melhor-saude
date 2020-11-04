@@ -1,6 +1,6 @@
 export class Medico {
     constructor(
-        public clinica_id: string,
+        public _id: string,
         public nome: string,
         public idade: number,
         public especializacao: string,
